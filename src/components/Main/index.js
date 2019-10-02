@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from './styles';
+import { Container, Lista } from './styles';
 
 import api from '../../services/api';
 
@@ -10,14 +10,23 @@ export default class Main extends Component {
     products: []
   };
 
+
   async componentDidMount() {
     const response = await api.get('https://api-39a-test.herokuapp.com/products');
+    this.setState({ products: response.data.data });
   };
 
   render() {
+
+    const { products } = this.state;
+
     return (
       <Container>
-        <h1>Main</h1>
+        <Lista>
+          {products.map(product =>
+            <li key={product.id}>{product.name}</li>
+          )}
+        </Lista>
       </Container>
     );
   }
