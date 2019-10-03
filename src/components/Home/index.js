@@ -19,7 +19,7 @@ export default class Home extends Component {
       <Container>
         <h1>Seja bem-vindo à nossa página</h1>
         <Link to={`products`}><h3>Conheça nossos produtos</h3></Link>
-        <Link to={`products`}>Cadastrar Novo Produto</Link>
+        <Link to={`post`}>Cadastrar Novo Produto</Link>
       </Container >
     );
   };
