@@ -7,6 +7,4 @@ export const Container = styled.div`
     font-family: Arial, Helvetica, sans-serif;
     font-size: 46px;
   }
-
-  
 `;
