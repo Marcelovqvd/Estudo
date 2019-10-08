@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Lista } from './styles';
-
+import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 export default class Main extends Component {
@@ -22,7 +22,10 @@ export default class Main extends Component {
       <Container>
         <Lista>
           {products.map(product =>
-            <li key={product.id}>{product.name}</li>
+            <li key={product.id}>
+              {product.name}
+              <Link to={`update`}>Detalhes</Link>
+            </li>
           )}
         </Lista>
       </Container>

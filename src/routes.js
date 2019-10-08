@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Main from './components/Main';
 import Home from './components/Home';
+import Main from './components/Main';
 import Create from './components/Create';
+import Update from './components/Update';
 
 
 export default function Routes() {
@@ -13,6 +14,7 @@ export default function Routes() {
         <Route path="/" exact component={Home} />
         <Route path="/products" component={Main} />
         <Route path="/post" component={Create} />
+        <Route path="/update" component={Update} />
       </Switch>
     </BrowserRouter>
   );
