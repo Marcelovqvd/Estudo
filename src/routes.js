@@ -14,7 +14,7 @@ export default function Routes() {
         <Route path="/" exact component={Home} />
         <Route path="/products" component={Main} />
         <Route path="/post" component={Create} />
-        <Route path="/update" component={Update} />
+        <Route path="/update/:id" component={Update} />
       </Switch>
     </BrowserRouter>
   );

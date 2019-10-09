@@ -24,7 +24,7 @@ export default class Main extends Component {
           {products.map(product =>
             <li key={product.id}>
               {product.name}
-              <Link to={`update`}>Detalhes</Link>
+              <Link to={`/update/${product.id}`}>Detalhes</Link>
             </li>
           )}
         </Lista>
