@@ -3,7 +3,7 @@ import api from '../../services/api';
 
 export default class Update extends Component {
   state = {
-    product: '',
+    name: '',
     description: ''
   }
 
@@ -11,18 +11,37 @@ export default class Update extends Component {
     const { match } = this.props;
     const productId = match.params.id;
     const response = await api.get(`/products/${productId}`);
-    this.setState({ product: response.data.name });
-    this.setState({ description: response.data.description });
-  };
+    console.log(response.data);
+  }
+
+  handleSubmit = async e => {
+    e.preventDefault();
+    const { name, description } = this.state;
+    const { match } = this.props;
+    const productId = match.params.id;
+    await api.put(`/products/${productId}`, { name, description });
+  }
 
   render() {
 
-    const { product, description } = this.state;
+    const { name, description } = this.state;
 
     return (
       <>
-        <h1>{product}</h1>
-        <p>{description}</p>
+        <h1>Editar produto</h1>
+        <form onSubmit={this.handleSubmit}>
+          <label>Editar Nome</label>
+          <input type="text"
+            onChange={e => this.setState({ name: e.target.value })}
+            value={name}
+          />
+          <label>Editar Descrição</label>
+          <input type="text"
+            onChange={e => this.setState({ description: e.target.value })}
+            value={description}
+          />
+          <button type="submit">Salvar</button>
+        </form>
       </>
     )
   }

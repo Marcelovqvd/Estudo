@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Main from './components/Main';
 import Create from './components/Create';
+import ShowProduct from './components/Product';
 import Update from './components/Update';
 
 
@@ -14,6 +15,7 @@ export default function Routes() {
         <Route path="/" exact component={Home} />
         <Route path="/products" component={Main} />
         <Route path="/post" component={Create} />
+        <Route path="/product/:id" component={ShowProduct} />
         <Route path="/update/:id" component={Update} />
       </Switch>
     </BrowserRouter>
