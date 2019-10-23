@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, InsideCointainer, Form } from './styles';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
 import ShowProduct from '../Product/index';
@@ -16,6 +17,7 @@ export default class Update extends Component {
     console.log(response.data);
   }
 
+
   handleSubmit = async e => {
     e.preventDefault();
     const { name, description } = this.state;
@@ -31,26 +33,28 @@ export default class Update extends Component {
     const { name, description } = this.state;
 
     return (
-      <>
-        <h1>Editar produto</h1>
+      <Container>
         <ShowProduct match={this.props.match} />
-        <form onSubmit={this.handleSubmit}>
-          <label>Editar Nome</label>
-          <input type="text"
-            onChange={e => this.setState({ name: e.target.value })}
-            value={name}
-          />
-          <label>Editar Descrição</label>
-          <input type="text"
-            onChange={e => this.setState({ description: e.target.value })}
-            value={description}
-          />
-          <button type="submit">Salvar</button>
-        </form>
-        <Link to={`/products`}>Voltar para a lista de produtos</Link>
-        <p>Novo nome: {name}</p>
-        <p>Nova descrição: {description}</p>
-      </>
+        <InsideCointainer>
+          <h1>Editar produto</h1>
+          <Form onSubmit={this.handleSubmit}>
+            <label>Editar Nome</label>
+            <input type="text"
+              onChange={e => this.setState({ name: e.target.value })}
+              value={name}
+            />
+            <label>Editar Descrição</label>
+            <textarea type="text"
+              onChange={e => this.setState({ description: e.target.value })}
+              value={description}
+            />
+            <button type="submit">Salvar</button>
+          </Form>
+          <Link to={`/products`}>Voltar para a lista de produtos</Link>
+          <p>Novo nome: {name}</p>
+          <p>Nova descrição: {description}</p>
+        </InsideCointainer>
+      </Container>
     )
   }
 
