@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Lista } from './styles';
+import { Container, Lista, LinkStyle } from './styles';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
@@ -17,12 +17,16 @@ export default class Main extends Component {
     const { products } = this.state;
     return (
       <Container>
+        <h1>Nossos produtos</h1>
         <Lista>
           {products.map(product =>
             <li key={product.id}>
-              <p>{product.name}</p>
-              <Link to={`/product/${product.id}`}>Detalhes</Link>
-              <Link to={`/update/${product.id}`}>Atualizar</Link>
+              <p>{product.name}
+                <LinkStyle>
+                  <Link to={`/product/${product.id}`}>Detalhes</Link>
+                  <Link to={`/update/${product.id}`}>Atualizar</Link>
+                </LinkStyle>
+              </p>
             </li>
           )}
         </Lista>
