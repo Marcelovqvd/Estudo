@@ -17,7 +17,7 @@ export default class Home extends Component {
   render() {
     return (
       <Container>
-        <h1>Seja bem-vindo à nossa página</h1>
+        <h1>Loticáryo</h1>
         <Link to={`products`}><p>Conheça nossos produtos</p></Link>
         <Link to={`post`}><p>Cadastre novo produto</p></Link>
       </Container >

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import img from '../../assets/Girl.jpg';
 
 export const Container = styled.div`
   width: 100vw;
@@ -9,10 +10,13 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  h1 {
+  background-image: url(${img});
+  background-size: 100% 100vh;
+   h1 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 46px;
+    font-size: 66px;
     margin: 40px;
+    color: #000;
   }
   h2 {
     font-family: Arial, Helvetica, sans-serif;
