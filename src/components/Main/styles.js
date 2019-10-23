@@ -15,5 +15,16 @@ export const Lista = styled.ul`
     border-bottom: 1px solid #000;
     text-align: left;
   }
+  p {
+    font-size: 26px;
+    font-family: Arial;
+    margin: 40px 20px;
+  }
+  a {
+    margin: 140px;
+    text-decoration: none;
+  }
 `;
+
+
 

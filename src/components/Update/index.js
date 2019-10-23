@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
+import ShowProduct from '../Product/index';
 
 export default class Update extends Component {
   state = {
@@ -20,6 +22,8 @@ export default class Update extends Component {
     const { match } = this.props;
     const productId = match.params.id;
     await api.put(`/products/${productId}`, { name, description });
+    this.setState({ name, description });
+    alert('Produto salvo com sucesso')
   }
 
   render() {
@@ -29,6 +33,7 @@ export default class Update extends Component {
     return (
       <>
         <h1>Editar produto</h1>
+        <ShowProduct match={this.props.match} />
         <form onSubmit={this.handleSubmit}>
           <label>Editar Nome</label>
           <input type="text"
@@ -42,6 +47,9 @@ export default class Update extends Component {
           />
           <button type="submit">Salvar</button>
         </form>
+        <Link to={`/products`}>Voltar para a lista de produtos</Link>
+        <p>Novo nome: {name}</p>
+        <p>Nova descrição: {description}</p>
       </>
     )
   }
