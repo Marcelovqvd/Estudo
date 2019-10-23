@@ -22,12 +22,14 @@ export default class Create extends Component {
     return (
       <Container>
         <Form onSubmit={this.handleSubmit}>
+          <p>Nome</p>
           <input type="text"
-            placeholder="Nome do produto"
+            placeholder="Escolha um nome para o produto"
             onChange={e => this.setState({ name: e.target.value })}
           />
-          <input type="text"
-            placeholder="Descrição do produto"
+          <p>Descrição</p>
+          <textarea type="text"
+            placeholder="Escolha uma descrição para o produto"
             onChange={e => this.setState({ description: e.target.value })}
           />
           <button type="submit">Salvar</button>
