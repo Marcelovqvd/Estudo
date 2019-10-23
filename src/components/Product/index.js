@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Container } from './styles';
+import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 export default class ShowProduct extends Component {
@@ -24,10 +26,11 @@ export default class ShowProduct extends Component {
     const { product, description } = this.state;
 
     return (
-      <>
+      <Container>
         <h1>{product}</h1>
         <p>{description}</p>
-      </>
+        <Link to={`/`}>Home</Link>
+      </Container>
     )
   }
 
