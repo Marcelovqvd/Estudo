@@ -13,25 +13,36 @@ export const Container = styled.div`
   background-image: url(${img});
   background-size: 100% 100vh;
    h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman', Times, serif;  
     font-size: 66px;
+    letter-spacing: 10px;
     margin: 40px;
     color: #000;
   }
   h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman', Times, serif;  
     font-size: 23px;
-    margin: 40px;
+    margin: 20px;
   }
   p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman', Times, serif;  
     font-size: 23px;
-    margin: 40px;
+    margin: 20px;
   } 
   a {
+    font-family: 'Times New Roman', Times, serif;  
+    font-size: 23px;
+    margin: 20px;
     text-decoration: none;
+    padding: 15px;
+    color: #000;
+    border: 1px solid black;
+    border-radius: 5px;
   }
   a:hover {
-    color: red;
+     border: 1px solid black;
+     border-radius: 5px;
+     color: #fff;
+     background-color: #000;
   }
 `;

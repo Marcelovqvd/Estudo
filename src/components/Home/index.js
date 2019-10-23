@@ -18,8 +18,8 @@ export default class Home extends Component {
     return (
       <Container>
         <h1>Loticáryo</h1>
-        <Link to={`products`}><p>Conheça nossos produtos</p></Link>
-        <Link to={`post`}><p>Cadastre novo produto</p></Link>
+        <Link to={`products`}>Conheça nossos produtos</Link>
+        <Link to={`post`}>Cadastre novo produto</Link>
       </Container >
     );
   };
