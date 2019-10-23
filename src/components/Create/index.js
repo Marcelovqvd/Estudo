@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from '../Home/styles';
-import { Form } from './styles';
+import { Container, Form } from './styles';
 import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
@@ -22,8 +21,6 @@ export default class Create extends Component {
 
     return (
       <Container>
-        <Link to={`products`}><h3>Lista de produtos cadastrados</h3></Link>
-
         <Form onSubmit={this.handleSubmit}>
           <input type="text"
             placeholder="Nome do produto"
@@ -33,8 +30,9 @@ export default class Create extends Component {
             placeholder="Descrição do produto"
             onChange={e => this.setState({ description: e.target.value })}
           />
-          <button type="submit">Cadastrar Novo Produto</button>
+          <button type="submit">Salvar</button>
         </Form>
+        <Link to={`/`}>Voltar para a pagina inicial</Link>
       </Container >
     );
   };
